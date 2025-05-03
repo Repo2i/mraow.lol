@@ -41,7 +41,16 @@
   <script setup> 
   import { ofetch } from "ofetch";
 
-
+  const title = ref('mraow.lol')
+const description = ref('javascript newbie')
+// This will be reactive when you change title/description above
+useHead({
+  title,
+  meta: [{
+    name: 'description',
+    content: description
+  }]
+})
 const statusName = await ofetch("https://api.lanyard.rest/v1/users/1248954910225993878");
 const heisdefodoingnothing = "he is doing nothing!";
 
