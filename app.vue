@@ -124,7 +124,7 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
     align-items: center;
     position: relative;
     height: 350px;
-    width: 53.5%;
+    width: 53.5vw;
     border-radius: 10px;
  }
  .whatamidoingrn {
@@ -137,11 +137,11 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
     font-size: 30px;
     color: rgb(255, 255, 255);
     display: flex;
-
+    flex-direction: row;
     align-items: center;
     position: relative;
-    height: 110px;
-    width: 100vw;
+    height: 100%;
+    width: 53.5vw;
     border-radius: 10px;
  }
   .txt {
@@ -151,7 +151,7 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
     font-size: 15px;
   }
   .txt1 {
-    margin-left: 24%;
+    margin-left: 120px;
     margin-top: 20px;
     width: 165px;
     height: 5px;
