@@ -57,6 +57,7 @@ useHead({
     content: description
   }]
 })
+const heisdefodoingnothing = "he is doing nothing!";
 const statusName = await ofetch("https://api.lanyard.rest/v1/users/1248954910225993878");
 
 const whatamidoing = (
