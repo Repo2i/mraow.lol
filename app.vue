@@ -1,5 +1,11 @@
 <template>
-    <div class="background-container">
+
+
+<div class="background-container">
+    <video class="background-video" muted autoplay loop playsinline>
+      <source src="./assets/pinterest-video-59-pintod.mp4" type="video/mp4" />
+    </video>
+
       <div class="content">
         <img src="https://api.lanyard.rest/1248954910225993878.png" class="pfp"/>
         <p style="font-family:monospace">{{ statusName.data.discord_user.username }}</p>
@@ -43,7 +49,7 @@
 
   const title = ref('mraow.lol')
 const description = ref('javascript newbie')
-// This will be reactive when you change title/description above
+
 useHead({
   title,
   meta: [{
@@ -52,7 +58,6 @@ useHead({
   }]
 })
 const statusName = await ofetch("https://api.lanyard.rest/v1/users/1248954910225993878");
-const heisdefodoingnothing = "he is doing nothing!";
 
 const whatamidoing = (
   statusName.data.activities[0]?.name || heisdefodoingnothing
@@ -83,26 +88,34 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
   </script>
   
   <style scoped>
-  .background-container {
-    height: 100vh;
-    width: 100%;
-    background-color: #2c2c2c;
-    background-image: url('https://i.pinimg.com/originals/e8/8d/9e/e88d9e84f35b8862fb867cdd83c42c4e.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+ .background-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
   
   .content {
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, .9);
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.3px);
+    -webkit-backdrop-filter: blur(7.3px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     font-size: 30px;
     color: rgb(255, 255, 255);
     margin-bottom: 5px;
@@ -111,15 +124,16 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
     align-items: center;
     position: relative;
     height: 350px;
-    width: 500px;
+    width: 53.5%;
     border-radius: 10px;
  }
  .whatamidoingrn {
-  backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, .9);
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.3px);
+   -webkit-backdrop-filter: blur(7.3px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     font-size: 30px;
     color: rgb(255, 255, 255);
     display: flex;
@@ -127,7 +141,7 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
     align-items: center;
     position: relative;
     height: 110px;
-    width: 500px;
+    width: 100vw;
     border-radius: 10px;
  }
   .txt {
@@ -164,7 +178,7 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
   .large {
     width: 70px;
     height: 70px;
-    margin-left: 10px;
+    margin-left: 2%;
     border-radius: 10px;
     border: 2px solid rgb(255, 255, 255);
   }
