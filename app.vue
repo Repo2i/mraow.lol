@@ -141,7 +141,7 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
     flex-direction: row;
     align-items: center;
     position: relative;
-    height: 100%;
+    height: 105%;
     width: 53.5vw;
     border-radius: 10px;
  }
