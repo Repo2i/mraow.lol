@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   
   plugins: [
   ],
-  modules: ['@nuxt/ui'],
+  modules: ['@nuxt/ui', '@virenbar/nuxt-lanyard'],
   css: ['./assets/css/main.css'],
   
   compatibilityDate: "2024-05-07",
@@ -22,4 +22,5 @@ export default defineNuxtConfig({
       }
     }
   }
+   
 })

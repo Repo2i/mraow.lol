@@ -47,8 +47,8 @@
   <script setup> 
   import { ofetch } from "ofetch";
 
-  const title = ref('mraow.lol')
-const description = ref('javascript newbie')
+  const title = ref('pupsikpeo')
+const description = ref('just a js noobie, decent at lua')
 
 useHead({
   title,
@@ -77,6 +77,8 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
 
 
   onMounted(() => {
+
+
     const v01 = document.getElementById("uh");
 
     if (statusName?.data.discord_status === "online") {
@@ -141,7 +143,9 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
     flex-direction: row;
     align-items: center;
     position: relative;
-    height: 105%;
+    text-overflow: ellipsis;
+    height: auto;
+    overflow:hidden;
     width: 53.5vw;
     border-radius: 10px;
  }
@@ -171,6 +175,7 @@ const img4 = rawImg?.replace(/mp:external\/([^\/]*)\/(http[s])/g, '$2:/') || '';
     
   }
   .txts {
+
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
